@@ -5,6 +5,7 @@ type ProductItemProps = {
     id: number;
     price: number;
     title: string;
+    priceFormatted: string;
   };
   onAddToWishList: (id: number) => void;
 };
@@ -12,7 +13,7 @@ type ProductItemProps = {
 function ProductItemComponent({ product, onAddToWishList }: ProductItemProps) {
   return (
     <div>
-      {product.title} - <strong>{product.price}</strong>
+      {product.title} - <strong>{product.priceFormatted}</strong>
       <button onClick={() => onAddToWishList(product.id)}>
         Add to wish list
       </button>
